@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        /* CSS styles for index page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Notes App!</h1>
+    <p>This is a simple note-taking application where you can jot down your thoughts and ideas.</p>
+    <h2>Your Notes:</h2>
+    <ul>
+        <% notes.forEach(note => { %>
+            <li><a href="/api/v1/notes/<%= note._id %>"><%= note.title %></a> - <%= note.description.slice(0, 50) %>...</li>
+        <% }); %>
+    </ul>
+    <a href="/api/v1/notes/new">Create a New Note</a>
+</body>
+</html>
