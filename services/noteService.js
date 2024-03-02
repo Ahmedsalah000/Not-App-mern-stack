@@ -44,28 +44,6 @@ export const getNotes = asyncHandler(async (req, res) => {
   res.status(200).json({ data: notes });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const getNote = asyncHandler(async (req, res) => {
     const note = await Note.findById({
     _id: req.params.id,
