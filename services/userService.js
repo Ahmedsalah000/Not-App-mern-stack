@@ -54,7 +54,6 @@ export const updateUser = asyncHandler(async (req, res, next) => {// this handle
         {
             name: req.body.name,
             slug: req.body.slug,
-            phone: req.body.phone,
             email: req.body.email,
             profileImg: req.body.profileImg,
             role: req.body.role,
@@ -97,8 +96,7 @@ export const deleteUser =deleteOne(User);
 // @route   GET /api/v1/users/getMe
 // @access  Private/Protect
 export const getLoggedUserData = asyncHandler(async (req, res, next) => {
-    req.params.id = req.user._id;//  if i logged in  here ican accsess  req.usr.-id and i want to get my data from data base i will use get one handler  that use req.params.id+
-    next();
+    req.params.id = req.user._id;
 });
 
 // @desc    Update logged user password
@@ -132,7 +130,6 @@ export const updateLoggedUserData = asyncHandler(async (req, res, next) => {
         {
             name: req.body.name,
             email: req.body.email,
-            phone: req.body.phone,
         },
         { new: true }
     );
