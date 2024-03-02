@@ -72,7 +72,6 @@ export const protect = asyncHandler(async (req, res, next) => {
 
   // 3) Check if user exists
   const currentUser = await User.findById(decoded.userId);
-  console.log(currentUser)
   if (!currentUser) {
     return next(
       new ApiError(

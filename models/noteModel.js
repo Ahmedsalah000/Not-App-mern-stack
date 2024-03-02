@@ -12,7 +12,7 @@ const noteSchema= new mongoose.Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: [true, 'SubCategory must be belong to parent category'],
+        required: [true,'Note must belong to a user'],
     },
     
 
@@ -20,6 +20,14 @@ const noteSchema= new mongoose.Schema({
 {
     timestamps:true
 }
-)
+);
+noteSchema.pre(/^find/,function(next){
+    this.populate({
+        path:'user',select:('name -_id')
+    })
+    next()
+})
+
 const Note=mongoose.model('Note',noteSchema)
+console.log(Note.schema.obj);
 export default Note
