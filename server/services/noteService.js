@@ -40,33 +40,11 @@ export const getNotes = asyncHandler(async (req, res) => {
 
   // Execute query
   const notes = await query;
-  console.log(notes);
 
   res.status(200).json({ data: notes });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Get single note
 export const getNote = asyncHandler(async (req, res) => {
     const note = await Note.findById({
     _id: req.params.id,

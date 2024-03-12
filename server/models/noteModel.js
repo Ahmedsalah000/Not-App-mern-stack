@@ -29,5 +29,4 @@ noteSchema.pre(/^find/,function(next){
 })
 
 const Note=mongoose.model('Note',noteSchema)
-console.log(Note.schema.obj);
 export default Note
