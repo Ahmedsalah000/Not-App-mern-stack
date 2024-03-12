@@ -14,7 +14,7 @@ export const getNotes = asyncHandler(async (req, res) => {
   const userId = req.user._id;
 
   // Exclude special query parameters from filter
-  const excludedFields = ['page', 'sort', 'limit', 'fields', 'keyword'];
+  const excludedFields = [ 'fields', 'keyword'];
   excludedFields.forEach(field => delete filterParams[field]);
 
   const filter = { ...filterParams };
@@ -44,7 +44,10 @@ export const getNotes = asyncHandler(async (req, res) => {
   res.status(200).json({ data: notes });
 });
 
+<<<<<<< HEAD:server/services/noteService.js
 // Get single note
+=======
+>>>>>>> ef7ffaabf86478842ef49f9f492ca65c470bdda9:services/noteService.js
 export const getNote = asyncHandler(async (req, res) => {
     const note = await Note.findById({
     _id: req.params.id,

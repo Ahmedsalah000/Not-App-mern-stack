@@ -29,4 +29,8 @@ noteSchema.pre(/^find/,function(next){
 })
 
 const Note=mongoose.model('Note',noteSchema)
+<<<<<<< HEAD:server/models/noteModel.js
 export default Note
+=======
+export default Note
+>>>>>>> ef7ffaabf86478842ef49f9f492ca65c470bdda9:models/noteModel.js
