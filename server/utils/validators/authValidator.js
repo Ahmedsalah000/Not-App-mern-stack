@@ -4,15 +4,15 @@ import validatorMiddleware from '../../middlewares/validatorMiddleware.js';
 import User from '../../models/userModel.js';
 
 export const signupValidator = [
-  check('name')
-    .notEmpty()
-    .withMessage('User required')
-    .isLength({ min: 3 })
-    .withMessage('Too short User name')
-    .custom((val, { req }) => {
-      req.body.slug = slugify(val);
-      return true;
-    }),
+  // check('name')
+  //   .notEmpty()
+  //   .withMessage('User required')
+  //   .isLength({ min: 3 })
+  //   .withMessage('Too short User name')
+  //   .custom((val, { req }) => {
+  //     req.body.slug = slugify(val);
+  //     return true;
+  //   }),
 
   check('email')
     .notEmpty()
